@@ -1,0 +1,12 @@
+---
+- name: Test community.vmware collection
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Get VMware information
+      community.vmware.vmware_vm_info:
+        hostname: "v010w01iprvc01.ngp.infra"
+        username: "terraform-test@vsphere.local"
+        password: "IJVd@sBcUo2%zx#MwEcB"
+        validate_certs: no
+      delegate_to: localhost
